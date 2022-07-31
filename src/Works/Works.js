@@ -6,11 +6,10 @@ function Works(){
 
 
     const navigate = useNavigate();
-    const todoState = useSelector((state) => state.counter);
+    const cardstate = useSelector((state) => state.counter);
     const param = useParams();
-    const detail = todoState.filter((item)=>{return item.id===param.id})
-    console.log(todoState)
-    console.log(detail)
+    const detail = cardstate.filter((item)=>{return item.id===param.id})
+    const real = detail[0]
     return(
         <div id="root">
             <div className="hjvVIS">
@@ -23,8 +22,8 @@ function Works(){
                     </div>
                     <button className="dcERit" onClick={() => {navigate('/');}}>이전으로</button>
                     </div>
-                    <h1>{detail[0].input}</h1>
-                    <main>{detail[0].work}</main>
+                    <h1>{real.input}</h1>
+                    <main>{real.work}</main>
                 </div>
             </div>
         </div>
