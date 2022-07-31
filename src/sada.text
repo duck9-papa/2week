@@ -1,0 +1,87 @@
+import './App.css';
+import { useSelector,useDispatch  } from "react-redux";
+import { addTodo } from './redux/modules/counter';
+import { useEffect,useState } from "react";
+
+function App() {
+
+  const todoState = useSelector((state) => state.counter);
+
+  const dispatch = useDispatch();
+  const [inputValue,setInputValue] = useState('')
+  const [workValue,setWorkValue] = useState('')
+  const [todo,setTodo] = useState([{
+    id : 0,
+    input: '리액트',
+    work : '리액트를 배워봅시다!',
+    done : false
+  }])
+    console.log(todo)
+
+  
+
+  const addItem=()=>{
+
+    setTodo([...todo,{id : 0,input : inputValue,work : workValue,done : false}])
+    // dispatch(addTodo(todo))
+  }
+
+  // useEffect(() => {
+  //   addItem();
+  //   }, []);
+
+
+
+
+  return (
+<main>
+    <div>
+
+    <div className='ietRZh'>
+
+    <div className='gRcjgh'>
+      <div>My Todo List</div>
+      <div>React</div>
+    </div>
+    <form className='gbfVyZ'>
+      <div className='iSeEJO'>
+        <label className='cvohld'>제목</label>
+        <input type="text" className='dcTfgk' name='title'value={inputValue} onChange={(event)=>{setInputValue(event.target.value)}}></input>
+        <label className='cvohld'>내용</label>
+        <input type="text" className='dcTfgk' value={workValue} onChange={(event)=>{setWorkValue(event.target.value)}}></input>
+      </div>
+      <button className='duHnQT' onClick={addItem}>추가하기</button>
+    </form>
+
+
+    <div className='ePkGrs'>
+      <h2>Working...</h2>
+      <div className='fmCWVp'>
+        <div className='cWuOfo'>
+          <a className='bDrZBT' ><div>상세보기</div></a>
+          <div>
+            <h2>333</h2>
+            <div>333</div>
+          </div>
+          <footer className='dAjrAc'>
+            <button className='ezZXrw' >삭제하기</button>
+            <button className='jfbOqs'>완료</button>
+          </footer>
+        </div>
+      </div>
+    </div>
+    <div className='ePkGrs'>
+    <h2>Done!</h2>
+    </div>
+    <div className='fmCWVp'></div>
+
+
+    </div>
+
+    </div>
+
+</main>
+  );
+}
+
+export default App;
