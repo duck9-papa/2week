@@ -2,7 +2,7 @@
 
 // 초기 상태값
 const todoValue = [{
-    id : 0,
+    id : "기본0",
     input: '리액트',
     work : '리액트를 배워봅시다!',
     done : false

@@ -10,9 +10,10 @@ function Works(){
     const param = useParams();
     const detail = cardstate.filter((item)=>{return item.id===param.id})
     const real = detail[0]
+    console.log(cardstate)
     return(
         <div id="root">
-            <div className="hjvVIS">
+            <div className="hjvVIS ietRZh">
                 <div>
                     <div className="gIyIMD">
                     <div>
@@ -22,8 +23,8 @@ function Works(){
                     </div>
                     <button className="dcERit" onClick={() => {navigate('/');}}>이전으로</button>
                     </div>
-                    <h1>{real.input}</h1>
-                    <main>{real.work}</main>
+                    <h1 className="textaling">{real.input}</h1>
+                    <main className="textaling">{real.work}</main>
                 </div>
             </div>
         </div>
